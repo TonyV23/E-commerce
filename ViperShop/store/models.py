@@ -1,5 +1,3 @@
-from distutils.command.upload import upload
-import black
 from django.db import models
 
 # Create your models here.
@@ -10,4 +8,3 @@ class Product (models.Model):
     stock = models.IntegerField(default=0)
     description = models.TextField(blank=True)
     thumbnail = models.ImageField(upload_to="products", blank=True, null=True)
-    
