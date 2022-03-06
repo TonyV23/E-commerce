@@ -127,5 +127,9 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+"""
+    ADDED VARIABLES 
+"""
 MEDIA_URL = "/media/" # url in navigation
 MEDIA_ROOT = BASE_DIR / "media"
+AUTH_USER_MODEL = "accounts.Shopper"
