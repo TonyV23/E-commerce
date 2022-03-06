@@ -8,6 +8,12 @@
 </head>
 <body>
     <a href="{% url 'index' %}"><h1>Tony Store Inc</h1></a>
+
+    {% if not user.authenticated %}
+        <a href="{% url 'signup' %}">Sign up</a>
+    {% endif %}
+
+
     {% block content %}
     {% endblock %}
 </body>
