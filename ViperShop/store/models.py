@@ -33,6 +33,16 @@ class Order(models.Model):
 
 # Panier (cart)
 """
-    utilisateur, 
+    utilisateur, articles, commandé ou non, date de commande
 """
+
+class Cart(models.Model):
+    user = models.OneToOneField(AUTH_USER_MODEL, on_delete = models.CASCADE)
+    orders = models.ManyToManyField(Order)
+    ordered = models.BooleanField(default=True)
+    ordered_date = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return self.user.username
+        
 
