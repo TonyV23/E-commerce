@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from store.views import index ,product_detail
-from accounts.views import signup, logout_user,login_user,add_to_cart
+from store.views import index ,product_detail,add_to_cart
+from accounts.views import signup, logout_user,login_user
 from django.conf.urls.static import static
 from ViperShop import settings
 

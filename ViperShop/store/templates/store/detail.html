@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
     
-{% block content %}
-    <h1>Tony shop Inc</h1>
-    <h2>{{ product.name }}</h2>
-    <h3>{{ product.price }} Fbu</h3>
-    <img src = "{{ product.thumbnail.url}}" alt = "{{ product.name }}" style = "max-width: 250px;">
-    <p>{{ product.description }}</p>
-    <p>{{ product.stock }} in stock</p>
+    {% block content %}
+        <h1>Tony shop Inc</h1>
+        <h2>{{ product.name }}</h2>
+        <h3>{{ product.price }} Fbu</h3>
+        <img src = "{{ product.thumbnail.url}}" alt = "{{ product.name }}" style = "max-width: 250px;">
+        <p>{{ product.description }}</p>
+        <p>{{ product.stock }} in stock</p>
+        
+        {% if user.is_authenticated %}
+            <p>
+                <a href="{% url 'add-to-cart' product.slug %}"> Add item to cart </a>
+            </p>
+    {% endif %}
 
 {% endblock %}
