@@ -15,9 +15,14 @@
     {% else %}
         <a href="{% url 'login' %}">Sign in</a>
         <a href="{% url 'signup' %}">Sign up</a>
-    {% endif %}
-
-
+        {% endif %}
+        
+        {% if user.cart %}
+            <p>
+                <a href="{% url 'cart' %}">View cart({{ user.cart.orders.count }})</a>    
+            </p>
+        {%endif%}
+        
     {% block content %}
     {% endblock %}
 </body>
